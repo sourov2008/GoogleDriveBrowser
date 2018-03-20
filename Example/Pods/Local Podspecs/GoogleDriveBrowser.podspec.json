@@ -1,0 +1,32 @@
+{
+  "name": "GoogleDriveBrowser",
+  "version": "0.1.0",
+  "summary": "A short description of GoogleDriveBrowser.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/sourovsuet@gmail.com/GoogleDriveBrowser",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Shourob Datta": "sourovsuet@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/sourovsuet@gmail.com/GoogleDriveBrowser.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "GoogleDriveBrowser/Classes/**/*",
+  "static_framework": true,
+  "dependencies": {
+    "GoogleAPIClientForREST/Drive": [
+      "~> 1.2.1"
+    ],
+    "Google/SignIn": [
+      "~> 3.0.3"
+    ]
+  },
+  "public_header_files": "GoogleDriveBrowser/Classes/SDGDTableViewController.h"
+}

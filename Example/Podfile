@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'GoogleDriveBrowser_Example' do
+  pod 'GoogleDriveBrowser', :path => '../'
+
+  target 'GoogleDriveBrowser_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

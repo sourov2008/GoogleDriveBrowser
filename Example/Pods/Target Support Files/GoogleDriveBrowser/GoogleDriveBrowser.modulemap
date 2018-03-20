@@ -1,0 +1,6 @@
+framework module GoogleDriveBrowser {
+  umbrella header "GoogleDriveBrowser-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Pods_GoogleDriveBrowser_Tests {
+  umbrella header "Pods-GoogleDriveBrowser_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
