@@ -7,7 +7,7 @@
  Google Drive browse and Download file . There is a default query for fetching file but you may customise your query . You may open your file with browser(safari) .
  
  ## User Interface
- GoogleDriveBrowser has a simple UITableView interface . You can customise cell icon and donwload icon . By default there is a file fetching Loading indicator , Download progress bar with donwload progress text . Added tableview pull to refresh . and file overview
+ GoogleDriveBrowser has a simple UITableView interface . You can customise cell icon and donwload icon . By default there is a file fetching Loading indicator , Download progress bar with donwload progress text . Added tableview pull to refresh and file overview.
  
  
  ## Files
