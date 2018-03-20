@@ -7,20 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Google/SignIn.h>
-#import "GTLRDrive.h"
+
+
 
 @import Foundation;
-
+@import GoogleSignIn;
+@import GoogleAPIClientForREST;
 
 @protocol SDGDTableViewControllerDelegate;
 
 @interface SDGDTableViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource,GIDSignInDelegate, GIDSignInUIDelegate>
 
 @property (nonatomic, weak) IBOutlet id <SDGDTableViewControllerDelegate> delegate;
-
-/// UITableView Cell Identifire which you have set in UItableViewCell  reuse Identifire.
-@property (nonatomic, strong) NSString * reuseableIdentifire;
 
 /// The color that will be used to tint any objects. Defaults to a blue color.
 @property (nonatomic, strong) UIColor *colorTheme;
@@ -124,4 +122,3 @@
 
 
 @end
-

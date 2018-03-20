@@ -16,31 +16,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self performSelector:@selector(loadDriveView) withObject:self afterDelay:0.1 ];
-    
-    
-}
--(void)loadDriveView{
-    
-    
     
 }
 
+
 - (IBAction)btnActionGD:(id)sender {
     
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"SDGD"
                                                          bundle:nil];
     obj=
     [storyboard instantiateViewControllerWithIdentifier:@"SDGDTableViewController"];
+    
     obj.delegate = self;
     obj.title = @"Google Drive";
     obj.colorTheme = [UIColor greenColor];
-    obj.reuseableIdentifire = @"SimpleTableItem";// Set your cell reuse Identifire
     obj.donwloadBtnImageName = @"download";
     //obj.isSignOutSilently = YES;
     //    obj.isEnableActivityIndicator = false;
     //    obj.isEnableProgressView = false;
-    obj.isEnablefileViewOption = false;
+    //obj.isEnablefileViewOption = false;
     //obj.isSignOutSilently = YES;
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:obj];
     [self presentViewController:nav animated:YES completion:nil];

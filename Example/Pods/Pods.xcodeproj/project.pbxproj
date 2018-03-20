@@ -68,6 +68,8 @@
 		AB0A625F515294B2E1A9CEDB48B5EC32 /* GTMOAuth2SignIn.h in Headers */ = {isa = PBXBuildFile; fileRef = E6EE0E1E1773E768B1FDE6D3DA500F45 /* GTMOAuth2SignIn.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ABF62F5ED10F5530DA4D09008AAA413E /* GTMSessionFetcherService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCF155E651A0BED69C130984A532391 /* GTMSessionFetcherService.m */; };
 		AEAF48C43214801C0089C58BFC049D9B /* GTMReadMonitorInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A69018FEE4E4CD8172C7CBE26001631 /* GTMReadMonitorInputStream.m */; };
+		AF41FE9F2061872300B7522F /* SDGDTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = AF41FE9D2061872300B7522F /* SDGDTableViewCell.h */; };
+		AF41FEA02061872300B7522F /* SDGDTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF41FE9E2061872300B7522F /* SDGDTableViewCell.m */; };
 		AF95471C205E343E0045B3D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF95471B205E343E0045B3D5 /* Assets.xcassets */; };
 		B4BE9491E8D40893F081F56C1AD633EC /* GTLRBatchQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E553A87AB828A9A760444C72EAF106 /* GTLRBatchQuery.m */; };
 		B52DD6AFE8CBD1334E96D7DD785C7223 /* GTLRBatchResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 004C0AC02963FCC48EC9917496EFC268 /* GTLRBatchResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -100,7 +102,6 @@
 		EDB845EC0E603B72E9584C0681049E24 /* GTLRService.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D94A5514E5FBEE79F66EC8AE30493E8 /* GTLRService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F0919C9A9E2909C26C674D93A4FEE40E /* GTLRErrorObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 01F760513037C459D0F895C6C36AF539 /* GTLRErrorObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F241E652875A5E1EE0AE816C2B10FED8 /* Pods-GoogleDriveBrowser_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DB048C924DC1234F9D44425D9670C45B /* Pods-GoogleDriveBrowser_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F29FB9541C6A3BFFA1ED50F1E0C58600 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = F563A667AA0DF9563230314AA9C77BE5 /* ReplaceMe.m */; };
 		F6842413ED08396B52147EAA86788106 /* GoogleDriveBrowser-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF5079D453EAEFC98CBECE237E638E0 /* GoogleDriveBrowser-dummy.m */; };
 		F703F99B138A26F7B354FB238407247E /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B27EB7505931FCBBB16B4A479F77945 /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		FB6B459F52225676282B0725421407FA /* GTLRDriveQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = ADAD1F43444C426F9D0F40D9EF3CE88A /* GTLRDriveQuery.m */; };
@@ -284,6 +285,10 @@
 		A94BB5CA1133FCE2C36EBB3AFCF50FC7 /* GTLRBatchResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTLRBatchResult.m; path = Source/Objects/GTLRBatchResult.m; sourceTree = "<group>"; };
 		ABDB252492726EF34B6D2BF3D81DEE6A /* Pods-GoogleDriveBrowser_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GoogleDriveBrowser_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		ADAD1F43444C426F9D0F40D9EF3CE88A /* GTLRDriveQuery.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTLRDriveQuery.m; path = Source/GeneratedServices/Drive/GTLRDriveQuery.m; sourceTree = "<group>"; };
+		AF41FE8B206182A300B7522F /* SDGD.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SDGD.storyboard; sourceTree = "<group>"; };
+		AF41FE9C206186F200B7522F /* Classes */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Classes; path = GoogleDriveBrowser/Classes; sourceTree = "<group>"; };
+		AF41FE9D2061872300B7522F /* SDGDTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDGDTableViewCell.h; path = GoogleDriveBrowser/Classes/SDGDTableViewCell.h; sourceTree = "<group>"; };
+		AF41FE9E2061872300B7522F /* SDGDTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SDGDTableViewCell.m; path = GoogleDriveBrowser/Classes/SDGDTableViewCell.m; sourceTree = "<group>"; };
 		AF95471B205E343E0045B3D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0DED6D6361EF96FD6609599914E27FF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0FDD7CC7FC5BAC6D47D051B0D20D275 /* GoogleAPIClientForREST.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GoogleAPIClientForREST.modulemap; sourceTree = "<group>"; };
@@ -328,7 +333,6 @@
 		EC9631E9B37474773C0372286DD7F0E5 /* Pods-GoogleDriveBrowser_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GoogleDriveBrowser_Tests-resources.sh"; sourceTree = "<group>"; };
 		EF39933B82BCB8F3B703B4A2AD867AA3 /* GTLRRuntimeCommon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GTLRRuntimeCommon.m; path = Source/Objects/GTLRRuntimeCommon.m; sourceTree = "<group>"; };
 		F14A8E3341566181ABC9F714890ED63B /* SignIn-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SignIn-Module.h"; path = "Headers/ModuleHeaders/SignIn-Module.h"; sourceTree = "<group>"; };
-		F563A667AA0DF9563230314AA9C77BE5 /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ReplaceMe.m; path = GoogleDriveBrowser/Classes/ReplaceMe.m; sourceTree = "<group>"; };
 		F7E16CE17AC07A501911EB25DB495D7D /* Pods-GoogleDriveBrowser_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GoogleDriveBrowser_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		FA84E4AF123920B438705728518F556D /* GTMSessionFetcher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GTMSessionFetcher-dummy.m"; sourceTree = "<group>"; };
 		FCFB2BFE2CD1FC26D2DB8E90BF7D6F8E /* Pods-GoogleDriveBrowser_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GoogleDriveBrowser_Tests-frameworks.sh"; sourceTree = "<group>"; };
@@ -659,9 +663,11 @@
 			isa = PBXGroup;
 			children = (
 				AF95471D205E35F80045B3D5 /* Resources */,
-				F563A667AA0DF9563230314AA9C77BE5 /* ReplaceMe.m */,
 				B8162EB3954FB496F90C4C549FF98EAA /* SDGDTableViewController.h */,
 				C05EEBACA20BBDBA468AF2F2618B927C /* SDGDTableViewController.m */,
+				AF41FE9D2061872300B7522F /* SDGDTableViewCell.h */,
+				AF41FE9E2061872300B7522F /* SDGDTableViewCell.m */,
+				AF41FE9C206186F200B7522F /* Classes */,
 				40D11F490D7CC93EFF18706438632CC0 /* Pod */,
 				AC57E6D9FC40D804F9935A1C063A0743 /* Support Files */,
 			);
@@ -722,6 +728,7 @@
 		AF95471D205E35F80045B3D5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AF41FE8B206182A300B7522F /* SDGD.storyboard */,
 				AF95471B205E343E0045B3D5 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -967,6 +974,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF41FE9F2061872300B7522F /* SDGDTableViewCell.h in Headers */,
 				136E4620F7311C4A1286047D00FC0A33 /* GoogleDriveBrowser-umbrella.h in Headers */,
 				CCEE2AAAE1129F8F5A0956CB368267C7 /* SDGDTableViewController.h in Headers */,
 			);
@@ -1212,8 +1220,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6842413ED08396B52147EAA86788106 /* GoogleDriveBrowser-dummy.m in Sources */,
-				F29FB9541C6A3BFFA1ED50F1E0C58600 /* ReplaceMe.m in Sources */,
 				0AE764DF6AD2FE1D9DDE7ED2EC397D1C /* SDGDTableViewController.m in Sources */,
+				AF41FEA02061872300B7522F /* SDGDTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

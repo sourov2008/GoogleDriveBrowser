@@ -7,6 +7,7 @@
 //
 
 #import "SDGDTableViewController.h"
+#import "SDGDTableViewCell.h"
 
 #define FILE_OBJECT_STORE_KEY @"GD_persistedFILE"
 @interface SDGDTableViewController ()
@@ -396,18 +397,21 @@ didSignInForUser:(GIDGoogleUser *)user
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 50;
+    return 60;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSString *cellID = @"SDGDTableICellID";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.reuseableIdentifire];
+    SDGDTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:self.reuseableIdentifire];
+        cell = [[SDGDTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
     cell.imageView.image = nil;
+    cell.btnDownload.hidden = true;
+    cell.imgDownload.hidden = true;
     cell.accessoryType = UITableViewCellAccessoryNone;
     GTLRDrive_File *file = self.fileListArray[indexPath.row];
     NSString *fileExtension= @"",*fileSize=@"";
@@ -436,46 +440,55 @@ didSignInForUser:(GIDGoogleUser *)user
         
         
         
-        // Add download button
-        UIButton *downloadButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [downloadButton setFrame:CGRectMake(0, 0, 25, 25)];
-        [downloadButton setBackgroundImage:[UIImage imageNamed:self.donwloadBtnImageName] forState:UIControlStateNormal];
-        cell.accessoryView = downloadButton;
-        [downloadButton bringSubviewToFront:self.view];
-        downloadButton.tag = indexPath.row;
-        [downloadButton addTarget:self action:@selector(btnDownloadAction:) forControlEvents:UIControlEventTouchUpInside];
+        // configure download button
+        
+        if(![self checkIsEmptyString:self.donwloadBtnImageName]){
+            
+            cell.btnDownload.hidden = false;
+            cell.imgDownload.hidden = false;
+            
+            cell.imgDownload.image = [UIImage imageNamed:self.donwloadBtnImageName];
+            //[downloadButton setBackgroundImage:[UIImage imageNamed:self.donwloadBtnImageName] forState:UIControlStateNormal];
+            //        cell.accessoryView = downloadButton;
+            //        [downloadButton bringSubviewToFront:self.view];
+            cell.btnDownload.tag = indexPath.row;
+            [cell.btnDownload addTarget:self action:@selector(btnDownloadAction:) forControlEvents:UIControlEventTouchUpInside];
+            
+            
+        }
+        
     }
     
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@  %@",fileExtension,fileSize];
+    cell.lblSubtitle.text = [NSString stringWithFormat:@"%@  %@",fileExtension,fileSize];
     
     // Icon setup from user
     if ([self.delegate respondsToSelector:@selector(delegateSetFIleOrFolderIcon:)]) {
-        cell.imageView.image = [self.delegate delegateSetFIleOrFolderIcon:file];
+        cell.imgFileIcon.image = [self.delegate delegateSetFIleOrFolderIcon:file];
     }
     
     // Default Icon
     else
     {
         if ( ![self checkIsEmptyString:file.fileExtension] ) {
-            cell.imageView.image = [UIImage imageNamed:file.fileExtension];
+            cell.imgFileIcon.image = [UIImage imageNamed:file.fileExtension];
             // If image still not found the default image
-            if (!cell.imageView.image) {
-                cell.imageView.image = [UIImage imageNamed:@"file"];
+            if (!cell.imgFileIcon.image) {
+                cell.imgFileIcon.image = [UIImage imageNamed:@"file"];
             }
         }
         
         else if (file.fileExtension == nil && [file.mimeType isEqualToString:@"application/vnd.google-apps.folder"]) {
-            cell.imageView.image = [UIImage imageNamed:@"folder"];
+            cell.imgFileIcon.image = [UIImage imageNamed:@"folder"];
         }
         
         else
-            cell.imageView.image = [UIImage imageNamed:@"file"];
+        cell.imgFileIcon.image = [UIImage imageNamed:@"file"];
     }
     
     cell.accessoryView.tintColor = self.colorTheme;
-    cell.textLabel.text = file.name;
-    cell.textLabel.lineBreakMode =  NSLineBreakByTruncatingMiddle;
-    ;
+    cell.lblTitle.text = file.name;
+    //cell.textLabel.lineBreakMode =  NSLineBreakByTruncatingMiddle;
+    
     return cell;
 }
 
@@ -489,7 +502,7 @@ didSignInForUser:(GIDGoogleUser *)user
     }
     // If only folder then will go next step
     if (file.fileExtension == nil && [file.mimeType isEqualToString:@"application/vnd.google-apps.folder"]) {
-        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
+        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"SDGD"
                                                              bundle:nil];
         SDGDTableViewController *obj = [storyboard instantiateViewControllerWithIdentifier:@"SDGDTableViewController"];
         
@@ -499,7 +512,6 @@ didSignInForUser:(GIDGoogleUser *)user
         obj.delegate = self.delegate;
         obj.colorTheme = self.colorTheme;
         obj.donwloadBtnImageName = self.donwloadBtnImageName;
-        obj.reuseableIdentifire = self.reuseableIdentifire;
         obj.isEnablefileViewOption = self.isEnablefileViewOption;
         obj.isEnableProgressView = self.isEnableProgressView;
         obj.isEnableActivityIndicator =self.isEnableActivityIndicator;
@@ -687,4 +699,3 @@ didSignInForUser:(GIDGoogleUser *)user
 
 
 @end
-
