@@ -22,11 +22,11 @@ Pod::Spec.new do |s|
 .There is a default query for fetching file but you may customise your query . You may open your file with browser(safari) .
                        DESC
 
-  s.homepage         = 'https://github.com/sourovsuet@gmail.com/GoogleDriveBrowser'
+  s.homepage         = 'https://github.com/sourov2008/GoogleDriveBrowser'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Shourob Datta' => 'sourovsuet@gmail.com' }
-  s.source           = { :git => 'https://github.com/sourovsuet@gmail.com/GoogleDriveBrowser.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/sourov2008/GoogleDriveBrowser.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
