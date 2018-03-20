@@ -4,7 +4,7 @@
  GoogleDriveBrowser provides a simple and effective way to browse, and download files using the Google Drive  and SDK. In a few minutes you can install Google Drive Browser But you have to configure google credential first.
  
  # Features
- Google Drive browse and Download file . There is a default query for fetching file but you may customise your query . You may open your file with browser
+ Google Drive browse and Download file . There is a default query for fetching file but you may customise your query . You may open your file with browser(safari) .
  
  ## User Interface
  GoogleDriveBrowser has a simple UITableView interface . You can customise cell icon and donwload icon . By default there is a file fetching Loading indicator , Download progress bar with donwload progress text . Added tableview pull to refresh . and file overview
