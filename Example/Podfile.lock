@@ -56,7 +56,7 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
   Google: cd92fab98f800f509da88c1e0c570275713bc9d5
   GoogleAPIClientForREST: a8b95a252014ce2e618df6b75dc72eca2c00b4af
-  GoogleDriveBrowser: 0f7eff8627a49cd76e6b0c2a335f1e52af04e2b8
+  GoogleDriveBrowser: 6968c2b35e3a86a197ddd0ecf9246c773c6161ca
   GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2

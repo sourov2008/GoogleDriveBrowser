@@ -28,5 +28,6 @@
       "~> 3.0.3"
     ]
   },
+  "resources": "Resources/**/*",
   "public_header_files": "GoogleDriveBrowser/Classes/SDGDTableViewController.h"
 }
