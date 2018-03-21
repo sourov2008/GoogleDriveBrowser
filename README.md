@@ -43,11 +43,11 @@
  
  ### Setup in Obj C
   
- 4. Add in AppDelegate.h file
- 
+ 1. Add in AppDelegate.h file
+         
          #import <Google/SignIn.h> 
  
- 5. In Appdelegate.m file add the following lines of code
+ 2. In Appdelegate.m file add the following lines of code
  
          - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
              NSError* configureError;
@@ -61,7 +61,7 @@
          return [[GIDSignIn sharedInstance] handleURL:url sourceApplication:sourceApplication annotation:annotation];
          }
 
- 4. in your desired class in .h file add following code
+ 3. in your desired class in .h file add following code
  
            #import "SDGDTableViewController.h"
  Implement the  
@@ -71,7 +71,7 @@
           @interface YourClassName : UIViewController <SDGDTableViewControllerDelegate>
  
  
- 5. in your desired class in .m file add this line of code
+ 4. in your desired class in .m file add this line of code
  
         UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"SDGD"
                                                          bundle:nil];
@@ -106,12 +106,12 @@
                                                  annotation: annotation)
          }
     
-    @available(iOS 9.0, *)
-    func application(_ app: UIApplication, open url: URL,
+         @available(iOS 9.0, *)
+         func application(_ app: UIApplication, open url: URL,
                      options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
-        let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String
-        let annotation = options[UIApplicationOpenURLOptionsKey.annotation]
-        return GIDSignIn.sharedInstance().handle(url,
+         let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String
+         let annotation = options[UIApplicationOpenURLOptionsKey.annotation]
+         return GIDSignIn.sharedInstance().handle(url,
                                                  sourceApplication: sourceApplication,
                                                  annotation: annotation)
     }
