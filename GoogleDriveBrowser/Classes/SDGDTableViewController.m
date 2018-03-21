@@ -161,6 +161,7 @@
     if(self = [super initWithCoder:aDecoder])
     {
         _folderID = @"root";// Default Folder ID is root
+        self.title = @"Google Drive";
         self.isEnablefileViewOption = YES;
         self.isEnableProgressView = YES;
         self.isEnableActivityIndicator = YES;
@@ -237,7 +238,7 @@ didSignInForUser:(GIDGoogleUser *)user
         self.lblProgress.text =  [NSString stringWithFormat:@"Downloading 0 KB of %@",[NSByteCountFormatter stringFromByteCount:[file.size longLongValue] countStyle:NSByteCountFormatterCountStyleFile] ];
     }
     else{
-        self.lblProgress.text =   @"Downloading...";
+        self.lblProgress.text =   @"Wait for Downloading...";
     }
     
     
@@ -273,7 +274,7 @@ didSignInForUser:(GIDGoogleUser *)user
         }
         
         else{
-            weakSelf.lblProgress.text = [NSString stringWithFormat:@"Downloading.. %@ ",[NSByteCountFormatter stringFromByteCount:totalBytesWritten countStyle:NSByteCountFormatterCountStyleFile] ];
+            weakSelf.lblProgress.text = [NSString stringWithFormat:@"Downloading... %@ ",[NSByteCountFormatter stringFromByteCount:totalBytesWritten countStyle:NSByteCountFormatterCountStyleFile] ];
             
         }
         
@@ -410,8 +411,10 @@ didSignInForUser:(GIDGoogleUser *)user
         cell = [[SDGDTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
     cell.imageView.image = nil;
-    cell.btnDownload.hidden = true;
-    cell.imgDownload.hidden = true;
+    
+    cell.btnDownload.hidden = false;
+    cell.imgDownload.hidden = false;
+
     cell.accessoryType = UITableViewCellAccessoryNone;
     GTLRDrive_File *file = self.fileListArray[indexPath.row];
     NSString *fileExtension= @"",*fileSize=@"";
@@ -421,7 +424,8 @@ didSignInForUser:(GIDGoogleUser *)user
         // This is folder
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         fileExtension = @"Folder";
-        
+        cell.btnDownload.hidden = true;
+        cell.imgDownload.hidden = true;
     }
     
     cell.accessoryView = nil;
@@ -437,25 +441,16 @@ didSignInForUser:(GIDGoogleUser *)user
         if (file.fileExtension) {
             fileExtension = file.fileExtension;
         }
-        
-        
-        
+
         // configure download button
-        
         if(![self checkIsEmptyString:self.donwloadBtnImageName]){
             
-            cell.btnDownload.hidden = false;
-            cell.imgDownload.hidden = false;
-            
             cell.imgDownload.image = [UIImage imageNamed:self.donwloadBtnImageName];
-            //[downloadButton setBackgroundImage:[UIImage imageNamed:self.donwloadBtnImageName] forState:UIControlStateNormal];
-            //        cell.accessoryView = downloadButton;
-            //        [downloadButton bringSubviewToFront:self.view];
-            cell.btnDownload.tag = indexPath.row;
-            [cell.btnDownload addTarget:self action:@selector(btnDownloadAction:) forControlEvents:UIControlEventTouchUpInside];
-            
             
         }
+        
+        cell.btnDownload.tag = indexPath.row;
+        [cell.btnDownload addTarget:self action:@selector(btnDownloadAction:) forControlEvents:UIControlEventTouchUpInside];
         
     }
     
