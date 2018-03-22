@@ -35,11 +35,11 @@
  
  ### Google Configuration (Both Objective C and Swift)
  
- 1. Configure Google Drive [Turn on the Drive API](https://developers.google.com/drive/v3/web/quickstart/ios#step_1_turn_on_the_api_name) and setup your app. Follow the Step 1
+ 1. Configure Google Drive (Follow the Step 1)[Turn on the Drive API](https://developers.google.com/drive/v3/web/quickstart/ios#step_1_turn_on_the_api_name) and setup your app. Follow the Step 1
  
- 2. Drag and drop downloaded GoogleService-Info.plist file into your project
+ 2. Drag and drop downloaded Credentials.plist file into your project
  
- 3. Open the GoogleService-Info.plist configuration file, and look for the REVERSED_CLIENT_ID key. Copy the value of that key, and paste it into the URL Schemes box on the configuration view.
+ 3. Open the Credentials.plist  file, and look for the REVERSED_CLIENT_ID key. Copy the value of that key, and paste it into the URL Schemes box on the configuration view.
  
  ### Setup in Obj C
   
@@ -47,16 +47,18 @@
          
          #import <Google/SignIn.h> 
  
- 2. In Appdelegate.m file add the following lines of code
+ 2. In Appdelegate.m file add the following lines of code . Replace YOUR_CLIENT_ID with your client ID from credentials.plist file.
  
-         - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-             NSError* configureError;
-             [[GGLContext sharedInstance] configureWithError: &configureError];
-             NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
- 
-             return YES;
+         - (BOOL)application:(UIApplication *)application
+         didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+         // Initialize Google sign-in.
+         
+         #warning relpace the string with your CLIENT_ID from credentials.plist
+         [GIDSignIn sharedInstance].clientID = @"<YOUR_CLIENT_ID>";
+         
+         return YES;
          }
- 
+         
          - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
          return [[GIDSignIn sharedInstance] handleURL:url sourceApplication:sourceApplication annotation:annotation];
          }
@@ -72,7 +74,7 @@
  
  
  4. in your desired class in .m file add this line of code
- 
+
         UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"SDGD"
                                                          bundle:nil];
         SDGDTableViewController *obj=
@@ -83,20 +85,20 @@
         [self presentViewController:nav animated:YES completion:nil];
 
  ### Setup in Swift
+ ### Follow the Steps in  Google Configuration (Both Objective C and Swift)
  
   1. Add the following line into your into your Bridging header file
 
-        #import  <GoogleDriveBrowser/SDGDTableViewController.h>
+         #import  <GoogleDriveBrowser/SDGDTableViewController.h>
  
   2. Add the following line into your into your AppDelegate.swift file
  
          import Google
 
-  3. Add the following line into your into your applicationDidFinishLaunching function in AppDelegate.swift file
+  3. Add the following line into your into your applicationDidFinishLaunching function in AppDelegate.swift file .Replace YOUR_CLIENT_ID with your client ID from credentials.plist file.
          
-         var configureError: NSError?
-         GGLContext.sharedInstance().configureWithError(&configureError)
-         assert(configureError == nil, "Error configuring Google services: \(String(describing: configureError))")
+         GIDSignIn.sharedInstance().clientID = "<YOUR_CLIENT_ID>"
+
 
   4. Add the following functions into your into your AppDelegate.swift file
 

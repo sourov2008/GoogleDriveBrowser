@@ -23,7 +23,7 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		9B57A6825801C999042D81E4 /* Pods_GoogleDriveBrowser_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4697CD34ADA2BD391F98E0 /* Pods_GoogleDriveBrowser_Example.framework */; };
-		AF954721205E39EB0045B3D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF954720205E39EB0045B3D5 /* GoogleService-Info.plist */; };
+		AF562695206372DF0093B348 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF562694206372DF0093B348 /* credentials.plist */; };
 		FBAE44FE098A7D73F7655DEE /* Pods_GoogleDriveBrowser_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD2FA04A0297BB31F220F454 /* Pods_GoogleDriveBrowser_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +65,7 @@
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A24F6726CA55B4A0C6FA080E /* Pods-GoogleDriveBrowser_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleDriveBrowser_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleDriveBrowser_Example/Pods-GoogleDriveBrowser_Example.release.xcconfig"; sourceTree = "<group>"; };
-		AF954720205E39EB0045B3D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AF562694206372DF0093B348 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		DCAE0864BE1ED9A0920BFE8E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		F0EFD9E86E200C452235612C /* Pods-GoogleDriveBrowser_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleDriveBrowser_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleDriveBrowser_Tests/Pods-GoogleDriveBrowser_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		FD2FA04A0297BB31F220F454 /* Pods_GoogleDriveBrowser_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleDriveBrowser_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,7 +111,6 @@
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
-				AF954720205E39EB0045B3D5 /* GoogleService-Info.plist */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for GoogleDriveBrowser */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -146,6 +145,7 @@
 		6003F593195388D20070C39A /* Example for GoogleDriveBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				AF562694206372DF0093B348 /* credentials.plist */,
 				6003F59C195388D20070C39A /* SDGDAppDelegate.h */,
 				6003F59D195388D20070C39A /* SDGDAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -284,7 +284,7 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
-				AF954721205E39EB0045B3D5 /* GoogleService-Info.plist in Resources */,
+				AF562695206372DF0093B348 /* credentials.plist in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -752,8 +752,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GoogleDriveBrowser/GoogleDriveBrowser-Prefix.pch";
 				INFOPLIST_FILE = "GoogleDriveBrowser/GoogleDriveBrowser-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "Shourob.GoogleDriveBroswer-sourov";
+				PRODUCT_BUNDLE_IDENTIFIER = "Shourob.GoogleDriveBroswer-souro";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -767,8 +768,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GoogleDriveBrowser/GoogleDriveBrowser-Prefix.pch";
 				INFOPLIST_FILE = "GoogleDriveBrowser/GoogleDriveBrowser-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "Shourob.GoogleDriveBroswer-sourov";
+				PRODUCT_BUNDLE_IDENTIFIER = "Shourob.GoogleDriveBroswer-souro";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

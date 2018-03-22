@@ -11,11 +11,12 @@
 @implementation SDGDAppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    NSError* configureError;
-    [[GGLContext sharedInstance] configureWithError: &configureError];
-    NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
+- (BOOL)application:(UIApplication *)application
+didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Initialize Google sign-in.
+    
+#warning relpace the string with your CLIENT_ID from credentials.plist
+    [GIDSignIn sharedInstance].clientID = @"348485212014-e5u24lvslpg71ohsltpoliv3k0fd5q1j.apps.googleusercontent.com";
     
     return YES;
 }
@@ -28,7 +29,6 @@
                                sourceApplication:sourceApplication
                                       annotation:annotation];
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
