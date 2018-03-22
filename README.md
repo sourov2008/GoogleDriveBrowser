@@ -4,7 +4,12 @@
  GoogleDriveBrowser provides a simple and effective way to browse, and download files using the Google Drive SDK. In a few minutes you can install Google Drive Browser to configure google credential first.
  
  # Features
- Google Drive browse and Download file . There is a default query for fetching file but you may customise your query . You may open your file with browser(safari).
+ - Google Drive browse and Download file .
+ - There is a default query for fetching file but you may customise your query .
+ - You may open your file with browser(safari).
+ - Pull to refresh
+ - Download progress shown (Both both progressbar and label)
+ - Download success toast
  
  ## User Interface
  GoogleDriveBrowser has a simple UITableView interface . You can customise cell icon and donwload icon . By default there is a file fetching Loading indicator , Download progress bar with donwload progress text . Added tableview pull to refresh and file overview.
@@ -15,7 +20,7 @@
  When a user taps on download button file will download and called the delegate method while downloading file .Also Called delegate method both success/failoure  completion
  
  ## Folder
-  In folder case recursively push untill file not found.
+  In folder case recursively browse untill file not found.
  
  # Project Details
  Learn more about the project requirements, licensing, contributions, and setup.
@@ -148,6 +153,9 @@
    ### Delegate Methods 
    
    Most important delegates methods are given here . See more delegate methods on SDGDTableViewController.h file
+   
+   
+byte by byte download progress call
 
       /**
       *  File download Progress value . You may use your own progressbar presentation depends on this values
@@ -157,6 +165,7 @@
       */
      - (void)delegateDownloadProgress: (GTLRDrive_File *)fileInfo downloadByte:(float)downloaded totalRecived : (float)totalDownloaded;
 
+Download Success Call
 
       /**
        *  Download successfull
@@ -165,6 +174,17 @@
        */
       - (void)delegateDownloadedFileWithFileDetails: (GTLRDrive_File *)fileInfo downloadedData: (NSData*)data;
       
+Your Customize query
+
+      /**
+      *  Returns Query parameter.  Like this format
+      *   query.fields = @"kind,nextPageToken,files(mimeType,id,kind,name,webViewLink,thumbnailLink,fileExtension,size, createdTime,modifiedTime)";
+      *   query.pageSize = 1000;
+      *   @param folderID is required for query coommand  Like In parents 'folderID'
+      *
+      */
+      - (GTLRDriveQuery_FilesList *)delegateSetQueryWithFolderID : (NSString*)folderID;
+
       
 Enjoy GoogleDriveBrowser
 
