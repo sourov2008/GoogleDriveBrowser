@@ -52,7 +52,7 @@
          
          #import <Google/SignIn.h> 
  
- 2. In Appdelegate.m file add the following lines of code . Replace YOUR_CLIENT_ID with your client ID from credentials.plist file.
+ 2. In Appdelegate.m file add the following lines of code . Replace YOUR_CLIENT_ID with your CLIENT_ID from credentials.plist file.
  
          - (BOOL)application:(UIApplication *)application
          didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -100,7 +100,7 @@
  
          import Google
 
-  3. Add the following line into your into your applicationDidFinishLaunching function in AppDelegate.swift file .Replace YOUR_CLIENT_ID with your client ID from credentials.plist file.
+  3. Add the following line into your into your applicationDidFinishLaunching function in AppDelegate.swift file .Replace YOUR_CLIENT_ID with your CLIENT_ID from credentials.plist file.
          
          GIDSignIn.sharedInstance().clientID = "<YOUR_CLIENT_ID>"
 
